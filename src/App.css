@@ -34,7 +34,7 @@ h1 {
 
 .complete {
   text-decoration: line-through;
-  opacity: 0.4;
+  opacity: 0.75;
 }
 
 .todo-form {
