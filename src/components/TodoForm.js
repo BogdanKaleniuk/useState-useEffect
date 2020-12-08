@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-//import {reactLocalStorage} from 'reactjs-localstorage';
 
 function TodoForm(props) {
   const [input, setInput] = useState(props.edit ? props.edit.value : '');
@@ -29,7 +28,7 @@ function TodoForm(props) {
       {props.edit ? (
         <>
           <input
-            placeholder='Update your item'
+            placeholder='Изменить текст задачи'
             value={input}
             onChange={handleChange}
             name='text'
@@ -58,6 +57,7 @@ function TodoForm(props) {
     </form>
   );
 }
+/*'Update your item' меняю на Изменить текст задачи*/
 /*placeholder='Update your item'*/
 /* placeholder='Add a todo'*/ 
 /*Add todo <button>*/
