@@ -21,8 +21,9 @@ function TodoList() {
     let newTodos = [todo, ...todos];
 
     setTodosWithSave(newTodos);
-    console.log(...todos);
+    
   };
+//console.log(...todos);
 //перед консоль лог было setTodos(newTodos);
   
 
