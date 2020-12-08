@@ -5,20 +5,20 @@ import Todo from './Todo';
 
 function TodoList() {
   //const [todos, setTodos] = useState([]);переделываем на 
-  const [todos, setTodos] = useState(localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : []);
+  let [todos, setTodos] = useState(localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : []);
   
   //добавляем еще одну функцию
-  const setTodosWithSave = (newTodos) => {
+  let setTodosWithSave = (newTodos) => {
     setTodos(newTodos);
-    localStorage.setItem('todos', JSON.stringify(newTodos))
+    localStorage.setItem('todos', JSON.stringify(newTodos));
 };
 
-  const addTodo = todo => {
+  let addTodo = todo => {
     if (!todo.text || /^\s*$/.test(todo.text)) {
       return;
     }
 
-    const newTodos = [todo, ...todos];
+    let newTodos = [todo, ...todos];
 
     setTodosWithSave(newTodos);
     console.log(...todos);
@@ -26,18 +26,23 @@ function TodoList() {
 //перед консоль лог было setTodos(newTodos);
   
 
-  const updateTodo = (todoId, newValue) => {
-    if (!newValue.text || /^\s*$/.test(newValue.text)) {
-      return;
-    }
-
-    setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
+  //let updateTodo = (todoId, newValue) => {
+    //if (!newValue.text || /^\s*$/.test(newValue.text)) {
+      //return;
+    //}
     
-    
-
-    
-
-  };
+    //setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
+    const updateTodo = (todoId, newValue) => {
+      if (!newValue.text || /^\s*$/.test(newValue.text)) {
+        return;
+      }
+  
+      setTodosWithSave(todos.map(item => (item.id === todoId ? newValue : item)));
+   };
+ //setTodos(newTodos);
+    //localStorage.setItem('todos', JSON.stringify('value'));
+    //setTodosWithSave.push{'id', 'text'};
+    //console.log(...todos);
 //34  строка?
   const removeTodo = id => {
     const removedArr = [...todos].filter(todo => todo.id !== id);
@@ -45,7 +50,7 @@ function TodoList() {
     setTodosWithSave(removedArr);
   };
 
-  const completeTodo = id => {
+  let completeTodo = id => {
     let updatedTodos = todos.map(todo => {
       if (todo.id === id) {
         todo.isComplete = !todo.isComplete;
@@ -53,10 +58,8 @@ function TodoList() {
       return todo;
     });
     setTodosWithSave(updatedTodos);
-  };
-
-  
-  //let toLocal = reactLocalStorage.setObject('var', {'test': 'test'});?????How
+    
+  }
   
   //h1 заголовок Какие планы на сегодня? 
   // (What's the Plan for Today?) по английскому
@@ -74,6 +77,6 @@ function TodoList() {
       />
     </>
   );
-}
+};
 
 export default TodoList;
