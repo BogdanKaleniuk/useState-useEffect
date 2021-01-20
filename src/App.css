@@ -35,11 +35,7 @@ h1 {
 
 .complete {
   text-decoration: line-through;
-<<<<<<< HEAD
-  opacity: 0.75;
-=======
   opacity: 0.9;
->>>>>>> 3256c2fd40248909febb0140cb45c292c4f2d60d
 }
 /*opacity: 0.4; .complete*/
 
