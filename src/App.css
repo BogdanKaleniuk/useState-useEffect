@@ -134,6 +134,14 @@ h1 {
   );
 }
 
+.todo-row:nth-child(4n + 3) {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 255, 98, 0.719) 0%,
+    rgba(20, 255, 98, 0.719) 100%
+  );
+}
+
 .icons {
   display: flex;
   align-items: center;
