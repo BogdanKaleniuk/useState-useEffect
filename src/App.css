@@ -13,13 +13,14 @@ body {
     rgba(100, 115, 255, 1) 100%
   );
 }
+
 .todo-app {
   display: flex;
   flex-direction: column;
   justify-content: start;
   width: 520px;
   min-height: 600px;
-  background: #161a2b;
+  background: #161a2b;/*background: #161a2b;*/
   text-align: center;
   margin: 128px auto;
   border-radius: 10px;
@@ -34,8 +35,9 @@ h1 {
 
 .complete {
   text-decoration: line-through;
-  opacity: 0.4;
+  opacity: 0.75;
 }
+/*opacity: 0.4; .complete*/
 
 .todo-form {
   margin-bottom: 32px;
@@ -100,6 +102,8 @@ h1 {
     rgba(255, 118, 20, 1) 0%,
     rgba(255, 84, 17, 1) 100%
   );
+
+/*rgba(255, 84, 17, 1) 100% */
 
   padding: 16px;
   border-radius: 5px;
